@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo "start with plugin"
+if [ ! -e /conf/jvm.options ]; then
+  echo -Djava.security.policy=$ES_HOME/plugins/elasticsearch-hanlp/plugin-security.policy >> $ES_HOME/config/jvm.options
+  cp $ES_HOME/config/jvm.options /conf
+
+  cd /data && \
+  unzip -q /tmp/HanLP.zip && \
+  rm /tmp/HanLP.zip
+fi
+
+if [ ! -e /conf/hanlp.properties ]; then
+    echo 'copying hanlp.properties'
+    cp /tmp/hanlp.properties /conf
+    echo 'ES_CLASSPATH="$ES_CLASSPATH:/conf/"' >> $ES_HOME/bin/elasticsearch.in.sh
+fi
+
+/start
