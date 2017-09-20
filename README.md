@@ -5,7 +5,7 @@
 
 #To Build : 
 1. Firstly, buildPluginZip of the project
-2. Secondly, you will need to generate the HanLP.zip which containing the data folder from the [HanLP] project. 
+2. Secondly, you will need to generate the HanLP.zip which containing the data folder from the [HanLP](https://github.com/hankcs/HanLP) project. 
 #Notes: 
 Feel free to build your own docker images. I didn’t choose the official image from Elasticsearch, because it has XPack trial version and also for some reason the container can’t start for no reason.
-Please refer to [itzg]for instruction on how to use the images. Basically, the configuration of the plugin can be placed in a data volume container under /conf
+Please refer to [itzg](https://github.com/itzg/dockerfiles)for instruction on how to use the images. Basically, the configuration of the plugin can be placed in a data volume container under /conf
